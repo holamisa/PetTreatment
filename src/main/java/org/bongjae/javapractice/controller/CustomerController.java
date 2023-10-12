@@ -10,9 +10,11 @@ import java.util.stream.Collectors;
 public class CustomerController {
     private List<Customer> customerList;
     private MedicalRecordController medicalRecordController;
+    private PetController petController;
 
-    public CustomerController(MedicalRecordController medicalRecordController) {
+    public CustomerController(PetController petController, MedicalRecordController medicalRecordController) {
         this.customerList = new ArrayList<>();
+        this.petController = petController;
         this.medicalRecordController = medicalRecordController;
     }
 
@@ -24,6 +26,7 @@ public class CustomerController {
     // 고객 삭제
     public void removeCustomer(String phone) {
         this.customerList.removeIf(p -> p.getPhone().equals(phone));
+        this.petController.removeAllPet(phone);
         this.medicalRecordController.removeAllMedicalRecord(phone);
     }
 

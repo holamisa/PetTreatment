@@ -39,18 +39,20 @@ public class ConsoleView {
         System.out.print("나이: ");
         String age = scanner.nextLine();
 
-        return new Pet(name, type, age);
+        return new Pet(null, name, type, age);
     }
 
     // 진료기록 입력
     public MedicalRecord getMedicalRecordInfo(){
         System.out.println("신규 진료기록 정보 입력하세요.");
+        System.out.print("이름: ");
+        String name = scanner.nextLine();
         System.out.print("날짜: ");
         String date = scanner.nextLine();
         System.out.print("내용: ");
         String content = scanner.nextLine();
 
-        return new MedicalRecord(null, date, content);
+        return new MedicalRecord(null, name, date, content);
     }
 
     // 동물정보 조회

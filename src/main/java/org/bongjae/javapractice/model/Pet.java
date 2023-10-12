@@ -3,6 +3,7 @@ package org.bongjae.javapractice.model;
 import java.util.List;
 
 public class Pet {
+    private String phone;
     private String name;
     private String type;
     private String age;
@@ -11,10 +12,19 @@ public class Pet {
 
     }
 
-    public Pet(String name, String type, String age) {
+    public Pet(String phone, String name, String type, String age) {
+        this.phone = phone;
         this.name = name;
         this.type = type;
         this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
@@ -43,10 +53,9 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet{" +
-                "이름='" + name + '\'' +
+        return "휸대폰 번호='" + phone + '\'' +
+                ", 이름='" + name + '\'' +
                 ", 종류='" + type + '\'' +
-                ", 나이='" + age + '\'' +
-                '}';
+                ", 나이='" + age + '\'';
     }
 }

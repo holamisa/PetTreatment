@@ -52,6 +52,10 @@ public class Customer {
         this.petList.add(pet);
     }
 
+    public void removeAllPet(){
+        this.petList.clear();
+    }
+
     public List<MedicalRecord> getMedicalRecordList() {
         return medicalRecordList;
     }
@@ -60,18 +64,16 @@ public class Customer {
         this.medicalRecordList.add(medicalRecord);
     }
 
-    public void removeMedicalRecord(){
+    public void removeAllMedicalRecord(){
         this.medicalRecordList.clear();
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "이름='" + name + '\'' +
+        return "이름='" + name + '\'' +
                 ", 생일='" + birth + '\'' +
                 ", 휴대폰 번호='" + phone + '\'' +
-                ", 동물=" + petList +
-                ", 진료기록=" + medicalRecordList +
-                '}';
+                ", 반려동물 수='" + petList.size() + '\'' +
+                ", 진료 횟수 ='" + medicalRecordList.size() + '\'';
     }
 }
